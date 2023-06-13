@@ -1,0 +1,33 @@
+<body class="text-center" style="width: 35rem;">
+    <form [formGroup]="formGroupAnuncio">
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Titulo: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Mercado Livre" formControlName="name">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Tipo: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Site" formControlName="type">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Descrição: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Site de compras" formControlName="description" >
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">URL: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://blog.bling.com.br/wp-content/uploads/2019/12/mercado-livre.jpg" formControlName="url"> 
+          </div>
+          <div class="mb-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" (click)="Cadastrar()">Cadastrar</button>
+          </div>
+    </form>
+</body>
+
+<tr *ngFor="let Anuncios of anuncio">
+    <div class="card" style="width: 18rem;">
+        <img src="{{Anuncios.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{Anuncios.name}}</h5>
+          <p class="card-text">{{Anuncios.description}}</p>
+        </div>
+    </div>
+</tr>
